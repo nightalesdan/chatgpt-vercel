@@ -1,19 +1,28 @@
 ---
 import Logo from "./Logo.astro"
 import ThemeToggle from "./ThemeToggle.astro"
+export const prerender = true
 ---
 
-<header class="sticky top--100px z-99">
+<header class="sticky top--100px z-99 px-2em">
   <div class="flex justify-between items-start">
-    <span class="w-100px h-100px logo">
-      <Logo />
-    </span>
-    <ThemeToggle />
+  <span class="w-56px h-56px logo">
+    <Logo />
+  </span>    
+  <ThemeToggle /> 
   </div>
-  <div class="flex items-center mt-2 text-2xl title">
-    <span class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 mr-2 text-1.5xl">
-      AskGPTAI 智能问答
-    </span>  
+
+  <div class="flex justify-between items-center py-1">
+    <div
+      class="flex items-center mt-2 pb-2 text-2xl title cursor-pointer"
+      onclick="scrollToTop()"
+    >
+      <span
+        class="text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 mr-2 text-1.5xl"
+        >玩转 AI 学院</span
+      >
+    </div>
+
   </div>
 </header>
 
@@ -69,4 +78,5 @@ import ThemeToggle from "./ThemeToggle.astro"
   .message-item {
     font-size: 15px; /* 在移动端将字体大小缩小为 15px */
   }
+}
 </style>
